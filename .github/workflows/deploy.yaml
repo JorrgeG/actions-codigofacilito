@@ -15,6 +15,7 @@ jobs:
       - run: echo "publicar version"
 
   second_job:
+    needs: deploy-codigofacil
     runs-on: ubuntu-latest
     steps:
       - name: hola mundo
