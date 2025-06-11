@@ -15,6 +15,7 @@ jobs:
       - run: echo "publicar version"
 
   second_job:
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: deploy-codigofacil
     runs-on: ubuntu-latest
     steps:
