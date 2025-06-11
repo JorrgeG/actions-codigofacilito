@@ -13,3 +13,9 @@ jobs:
       - run: echo "correr migraciones"
       - run: echo "generar binario"
       - run: echo "publicar version"
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hola mundo
+        run: echo "hacemos pull del codigo"
