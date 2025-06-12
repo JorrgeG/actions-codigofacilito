@@ -12,7 +12,7 @@ jobs:
     env:
       name: CodigoFacilito
     steps:
-      - run: echo "hacemos pull del codigo $CodigoFacilito"
+      - run: echo "hacemos pull del codigo $name"
       - run: echo "correr migraciones"
       - run: echo "generar binario"
       - run: echo "publicar version"
