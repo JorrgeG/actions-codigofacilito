@@ -13,7 +13,7 @@ jobs:
     env:
       NAME: CodigoFacilito
     steps:
-      - run: echo "hacemos pull del codigo $name"
+      - run: echo "hacemos pull del codigo $NAME"
       - run: echo "correr migraciones"
       - name: Working dir
         run: ls -al
@@ -29,3 +29,9 @@ jobs:
     steps:
       - name: hola mundo
         run: echo "hacemos pull del codigo"
+      - name: working dir
+        id: step_2
+        run: echo "my_variable=Hola Mundo" >> $GITHUB_OUTPUT
+
+      - name: obtener mensajes
+        run: echo "${{ steps.step_2.outputs.my_variable }}"
