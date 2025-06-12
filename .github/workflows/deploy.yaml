@@ -7,15 +7,20 @@ on:
 
 jobs:
   deploy-codigofacil:
+    name: nombre-personalizado
     runs-on: ubuntu-latest
 
     env:
-      name: CodigoFacilito
+      NAME: CodigoFacilito
     steps:
       - run: echo "hacemos pull del codigo $name"
       - run: echo "correr migraciones"
-      - run: echo "generar binario"
-      - run: echo "publicar version"
+      - name: Working dir
+        run: ls -al
+      - name: Action
+        uses: actions/checkout@v4
+      - name: Working dir after action
+        run: ls -al
 
   second_job:
     if: ${{ github.ref == 'refs/heads/main' }}
